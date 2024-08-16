@@ -22,32 +22,38 @@
                 <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Wdt-ua-dbL" userLabel="containerView">
                     <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="WVL-02-Z0K" appends="YES" id="EgA-tT-Lsp"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8X-eN-28U">
-                    <rect key="frame" x="0.0" y="59" width="393" height="5"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="3"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="5" id="ceB-RA-qZ2"/>
+                        <constraint firstAttribute="height" constant="3" id="ceB-RA-qZ2"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pl-wr-HS2" userLabel="previous">
                     <rect key="frame" x="0.0" y="0.0" width="75" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="tod-Ng-BFx"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="gray"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
                     <connections>
                         <action selector="previousButtonTapped:" destination="-1" eventType="touchUpInside" id="iSU-Zp-knG"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-Jk-7V9" userLabel="next">
                     <rect key="frame" x="318" y="0.0" width="75" height="852"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="75" id="BhS-cN-TKI"/>
                     </constraints>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="gray"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
                     <connections>
                         <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="smr-en-wHI"/>
                     </connections>
@@ -55,6 +61,7 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="2Hc-cG-HM8"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6Pl-wr-HS2" secondAttribute="bottom" id="8ov-5i-6n4"/>
                 <constraint firstItem="6Pl-wr-HS2" firstAttribute="leading" secondItem="2Hc-cG-HM8" secondAttribute="leading" id="Arx-EK-QdE"/>
@@ -71,7 +78,11 @@
                 <constraint firstItem="6Pl-wr-HS2" firstAttribute="top" secondItem="5XN-sE-Tx1" secondAttribute="top" id="vMJ-3f-Wpx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="WVL-02-Z0K" appends="YES" id="vbK-uA-nxb"/>
+            </connections>
             <point key="canvasLocation" x="14.503816793893129" y="19.718309859154932"/>
         </view>
+        <swipeGestureRecognizer direction="down" id="WVL-02-Z0K"/>
     </objects>
 </document>

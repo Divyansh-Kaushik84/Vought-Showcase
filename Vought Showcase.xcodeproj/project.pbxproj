@@ -28,6 +28,7 @@
 		5E87DC912C6232440005D86C /* Vought_ShowcaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87DC902C6232440005D86C /* Vought_ShowcaseUITestsLaunchTests.swift */; };
 		5E87DCA02C6236A30005D86C /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E87DC9F2C6236A30005D86C /* CarouselViewController.swift */; };
 		5E87DCA22C62375E0005D86C /* CarouselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E87DCA12C62375E0005D86C /* CarouselViewController.xib */; };
+		BB32ACDF2C6FC57700B3E931 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB32ACDE2C6FC57700B3E931 /* InitialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		5E87DC902C6232440005D86C /* Vought_ShowcaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vought_ShowcaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5E87DC9F2C6236A30005D86C /* CarouselViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
 		5E87DCA12C62375E0005D86C /* CarouselViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselViewController.xib; sourceTree = "<group>"; };
+		BB32ACDE2C6FC57700B3E931 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,10 +212,11 @@
 		5E87DC9D2C6232DC0005D86C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5E87DC9F2C6236A30005D86C /* CarouselViewController.swift */,
-				5E87DCA12C62375E0005D86C /* CarouselViewController.xib */,
+				BB32ACDE2C6FC57700B3E931 /* InitialViewController.swift */,
 				5E87DC712C6232430005D86C /* MainViewController.swift */,
 				5E87DC732C6232430005D86C /* Main.storyboard */,
+				5E87DC9F2C6236A30005D86C /* CarouselViewController.swift */,
+				5E87DCA12C62375E0005D86C /* CarouselViewController.xib */,
 				5E1E353E2C6247C5000D7DEF /* ImageViewController.swift */,
 			);
 			path = Controllers;
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB32ACDF2C6FC57700B3E931 /* InitialViewController.swift in Sources */,
 				5E1E35442C62497D000D7DEF /* HomeLanderCarouselItem.swift in Sources */,
 				5E87DCA02C6236A30005D86C /* CarouselViewController.swift in Sources */,
 				5E87DC722C6232430005D86C /* MainViewController.swift in Sources */,

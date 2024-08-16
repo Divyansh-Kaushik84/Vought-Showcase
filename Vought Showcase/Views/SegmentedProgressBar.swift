@@ -176,6 +176,3 @@ fileprivate class Segment {
     init() {
     }
 }
-#Preview{
-    SegmentedProgressBar(numberOfSegments: 4, duration: 5)
-}
