@@ -15,7 +15,7 @@ final class CarouselViewController: UIViewController {
     @IBOutlet private weak var containerView: UIView!
     
     /// Carousel control with page indicator
-    @IBOutlet private weak var carouselControl: UIPageControl!
+//    @IBOutlet private weak var carouselControl: UIPageControl!
 
 
     /// Page view controller for carousel
@@ -28,7 +28,7 @@ final class CarouselViewController: UIViewController {
     private var currentItemIndex: Int = 0 {
         didSet {
             // Update carousel control page
-            self.carouselControl.currentPage = currentItemIndex
+//            self.carouselControl.currentPage = currentItemIndex
         }
     }
 
@@ -47,7 +47,7 @@ final class CarouselViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initPageViewController()
-        initCarouselControl()
+//        initCarouselControl()
     }
     
     
@@ -74,21 +74,21 @@ final class CarouselViewController: UIViewController {
     }
 
     /// Initialize carousel control
-    private func initCarouselControl() {
+//    private func initCarouselControl() {
         // Set page indicator color
-        carouselControl.currentPageIndicatorTintColor = UIColor.darkGray
-        carouselControl.pageIndicatorTintColor = UIColor.lightGray
+//        carouselControl.currentPageIndicatorTintColor = UIColor.darkGray
+//        carouselControl.pageIndicatorTintColor = UIColor.lightGray
         
         // Set number of pages in carousel control and current page
-        carouselControl.numberOfPages = items.count
-        carouselControl.currentPage = currentItemIndex
+//        carouselControl.numberOfPages = items.count
+//        carouselControl.currentPage = currentItemIndex
         
         // Add target for page control value change
-        carouselControl.addTarget(
-                    self,
-                    action: #selector(updateCurrentPage(sender:)),
-                    for: .valueChanged)
-    }
+//        carouselControl.addTarget(
+//                    self,
+//                    action: #selector(updateCurrentPage(sender:)),
+//                    for: .valueChanged)
+//    }
 
     /// Update current page
     /// Parameter sender: UIPageControl
