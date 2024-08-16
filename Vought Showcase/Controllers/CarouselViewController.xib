@@ -4,13 +4,13 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CarouselViewController" customModule="Vought_Showcase" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="Wdt-ua-dbL" id="3fd-pe-WiW"/>
+                <outlet property="storyProgressBarView" destination="O8X-eN-28U" id="Eqg-a2-lPc"/>
                 <outlet property="view" destination="5XN-sE-Tx1" id="DIX-hk-WsU"/>
             </connections>
         </placeholder>
@@ -25,7 +25,7 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8X-eN-28U">
                     <rect key="frame" x="0.0" y="59" width="393" height="5"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="5" id="ceB-RA-qZ2"/>
                     </constraints>
@@ -37,6 +37,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="gray"/>
+                    <connections>
+                        <action selector="previousButtonTapped:" destination="-1" eventType="touchUpInside" id="iSU-Zp-knG"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxr-Jk-7V9" userLabel="next">
                     <rect key="frame" x="318" y="0.0" width="75" height="852"/>
@@ -45,6 +48,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="gray"/>
+                    <connections>
+                        <action selector="nextButtonTapped:" destination="-1" eventType="touchUpInside" id="smr-en-wHI"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="2Hc-cG-HM8"/>
@@ -68,9 +74,4 @@
             <point key="canvasLocation" x="14.503816793893129" y="19.718309859154932"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

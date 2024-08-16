@@ -9,10 +9,27 @@ import Foundation
 import UIKit
 
 
-final class CarouselViewController: UIViewController {
+final class CarouselViewController: UIViewController, SegmentedProgressBarDelegate {
+    func segmentedProgressBarChangedIndex(index: Int) {
+        
+//        if(currentItemIndex < index){
+//            navigateController(index: index)
+//        } 
+//        else if(currentItemIndex > index){
+////            navigateController(index: index-1)
+//        }
+    }
+    
+    func segmentedProgressBarFinished() {
+        
+    }
+    
     
     /// Container view for the carousel
     @IBOutlet private weak var containerView: UIView!
+    
+    @IBOutlet weak var storyProgressBarView: UIView!//added the outlet for the view that will contain the progress bar
+    var storyProgressBar : SegmentedProgressBar?//the segmented progress bar for instagram story style experience
     
     /// Carousel control with page indicator
 //    @IBOutlet private weak var carouselControl: UIPageControl!
@@ -43,19 +60,47 @@ final class CarouselViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        storyProgressBar?.startAnimation()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         initPageViewController()
 //        initCarouselControl()
+        storyProgressBar = SegmentedProgressBar(numberOfSegments: items.count,
+                                                 duration: 5)
+        storyProgressBar?.frame = CGRect(x: 0,
+                                          y: 0,
+                                         width: UIScreen.main.bounds.width,
+                                         height: 5)
+        storyProgressBarView?.addSubview(storyProgressBar!)
+        storyProgressBar?.delegate = self
+
+
+//        
+//        view.addSubview(storyProgressBarView)
+//        view.addSubview(SegmentedProgressBar(numberOfSegments: items.count, duration: 5))//it is not showing the number of stories equal to items
+        
     }
     
-    
+    @IBAction func previousButtonTapped(_ sender: UIButton) 
+    {
+        storyProgressBar?.rewind()//go to the previous segment
+    }
+    @IBAction func nextButtonTapped(_ sender: UIButton) 
+    {
+        storyProgressBar?.skip()//go to the next segment
+    }
+    //    public override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+//    
     /// Initialize page view controller
     private func initPageViewController() {
 
         // Create pageViewController
-        pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal,
+        pageViewController = UIPageViewController(transitionStyle: .pageCurl, navigationOrientation: .horizontal,
         options: nil)
 
         // Set up pageViewController
@@ -67,7 +112,8 @@ final class CarouselViewController: UIViewController {
         guard let theController = pageViewController else {
             return
         }
-        
+        pageViewController?.gestureRecognizers.forEach { $0.isEnabled = false } // disable the swipe gesture now we can go to the next VC by pressing the buttons only
+
         // Add pageViewController in container view
         add(asChildViewController: theController,
             containerView: containerView)
@@ -92,19 +138,19 @@ final class CarouselViewController: UIViewController {
 
     /// Update current page
     /// Parameter sender: UIPageControl
-    @objc func updateCurrentPage(sender: UIPageControl) {
-        // Get direction of page change based on current item index
-        let direction: UIPageViewController.NavigationDirection = sender.currentPage > currentItemIndex ? .forward : .reverse
-        
-        // Get controller for the page
-        let controller = getController(at: sender.currentPage)
-        
-        // Set view controller in pageViewController
-        pageViewController?.setViewControllers([controller], direction: direction, animated: true, completion: nil)
-        
-        // Update current item index
-        currentItemIndex = sender.currentPage
-    }
+//    @objc func updateCurrentPage(sender: UIPageControl) {
+//        // Get direction of page change based on current item index
+//        let direction: UIPageViewController.NavigationDirection = sender.currentPage > currentItemIndex ? .forward : .reverse
+//        
+//        // Get controller for the page
+//        let controller = getController(at: sender.currentPage)
+//        
+//        // Set view controller in pageViewController
+//        pageViewController?.setViewControllers([controller], direction: direction, animated: true, completion: nil)
+//        
+//        // Update current item index
+//        currentItemIndex = sender.currentPage
+//    }
     
     /// Get controller at index
     /// - Parameter index: Index of the controller
@@ -112,7 +158,29 @@ final class CarouselViewController: UIViewController {
     private func getController(at index: Int) -> UIViewController {
         return items[index].getController()
     }
+    func navigateController(index: Int)
+    {
+        if(currentItemIndex+1 != items.count)
+        {
+            currentItemIndex = currentItemIndex + 1
+            print(currentItemIndex)
+                pageViewController?.setViewControllers([getController(at: currentItemIndex)],
+                                                       direction: .forward,
+                                                       animated: false,
+                                                       completion: nil)
+            
+        }
+        else if(currentItemIndex != 0)
+        {
+            currentItemIndex = currentItemIndex - 1
+            print(currentItemIndex)
 
+            pageViewController?.setViewControllers([getController(at: currentItemIndex)],
+                                                       direction: .reverse,
+                                                       animated: false,
+                                                       completion: nil)
+        }
+    }
 }
 
 // MARK: UIPageViewControllerDataSource methods
