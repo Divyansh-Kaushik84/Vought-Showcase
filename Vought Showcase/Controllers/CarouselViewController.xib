@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Wdt-ua-dbL" userLabel="containerView">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8X-eN-28U">
@@ -52,17 +52,17 @@
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="6Pl-wr-HS2" secondAttribute="bottom" id="8ov-5i-6n4"/>
                 <constraint firstItem="6Pl-wr-HS2" firstAttribute="leading" secondItem="2Hc-cG-HM8" secondAttribute="leading" id="Arx-EK-QdE"/>
+                <constraint firstItem="O8X-eN-28U" firstAttribute="trailing" secondItem="Wdt-ua-dbL" secondAttribute="trailing" id="EnG-AS-MEk"/>
                 <constraint firstItem="2Hc-cG-HM8" firstAttribute="trailing" secondItem="Cxr-Jk-7V9" secondAttribute="trailing" id="EvA-tQ-HAP"/>
                 <constraint firstItem="O8X-eN-28U" firstAttribute="leading" secondItem="2Hc-cG-HM8" secondAttribute="leading" id="Waa-Gz-ra4"/>
-                <constraint firstItem="Wdt-ua-dbL" firstAttribute="top" secondItem="5XN-sE-Tx1" secondAttribute="top" id="XKG-Ln-ors"/>
                 <constraint firstItem="Wdt-ua-dbL" firstAttribute="leading" secondItem="2Hc-cG-HM8" secondAttribute="leading" id="YaR-nC-vHc"/>
+                <constraint firstItem="Wdt-ua-dbL" firstAttribute="top" secondItem="5XN-sE-Tx1" secondAttribute="top" id="Z2f-zA-QbL"/>
                 <constraint firstItem="Cxr-Jk-7V9" firstAttribute="top" secondItem="5XN-sE-Tx1" secondAttribute="top" id="fhr-5V-1rq"/>
                 <constraint firstAttribute="bottom" secondItem="Cxr-Jk-7V9" secondAttribute="bottom" id="gym-9I-Pez"/>
-                <constraint firstItem="Wdt-ua-dbL" firstAttribute="trailing" secondItem="2Hc-cG-HM8" secondAttribute="trailing" id="lR9-7d-BKu"/>
-                <constraint firstItem="O8X-eN-28U" firstAttribute="trailing" secondItem="Wdt-ua-dbL" secondAttribute="trailing" id="t5S-nH-43E"/>
+                <constraint firstItem="Wdt-ua-dbL" firstAttribute="bottom" secondItem="5XN-sE-Tx1" secondAttribute="bottom" id="h6T-Dg-rdp"/>
                 <constraint firstItem="O8X-eN-28U" firstAttribute="top" secondItem="2Hc-cG-HM8" secondAttribute="top" id="uXu-IY-u7p"/>
+                <constraint firstItem="Wdt-ua-dbL" firstAttribute="trailing" secondItem="Cxr-Jk-7V9" secondAttribute="trailing" id="vB4-p6-V24"/>
                 <constraint firstItem="6Pl-wr-HS2" firstAttribute="top" secondItem="5XN-sE-Tx1" secondAttribute="top" id="vMJ-3f-Wpx"/>
-                <constraint firstItem="2Hc-cG-HM8" firstAttribute="bottom" secondItem="Wdt-ua-dbL" secondAttribute="bottom" id="vqw-pq-09i"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="14.503816793893129" y="19.718309859154932"/>
